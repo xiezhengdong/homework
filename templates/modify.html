@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+<!-- 内容区域 -->
+{% block container %}
+
+<h3>正在修改用户 "{{ user.name }}" 的信息</h3>
+
+<form action="/modify" method="POST">
+    姓名: <input type="text" name="name" value="{{ user.name }}" />
+    <br />
+
+    生日: <input type="text" name="birthday" value="{{ user.birthday }}" />
+    <br />
+
+    城市: <input type="text" name="city" value="{{ user.city }}" />
+    <br />
+
+    资金: <input type="text" name="money" value="{{ user.money }}" /> $
+    <br />
+
+    <input type="hidden" name="id" value="{{ user.id }}" />
+    <input type="submit" />
+</form>
+
+{% end %}

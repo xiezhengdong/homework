@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+<!-- 内容区域 -->
+{% block container %}
+<table>
+    <thead>
+        <tr>
+            <th>编号</th>
+            <th>姓名</th>
+            <th>生日</th>
+            <th>城市</th>
+            <th>资金</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for u in all_users %}
+        <tr>
+            <td>{{ u.id }}</td>
+            <td>{{ u.name }}</td>
+            <td>{{ u.birthday }}</td>
+            <td>{{ u.city }}</td>
+            <td>{{ u.money }}</td>
+        </tr>
+        {% end %}
+    </tbody>
+</table>
+{% end %}

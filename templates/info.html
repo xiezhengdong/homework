@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+<!-- 内容区域 -->
+{% block container %}
+<h3>用户信息如下</h3>
+<ul>
+    <li><strong>编号: </strong>{{ user.id }}</li>
+    <li><strong>姓名: </strong>{{ user.name }}</li>
+    <li><strong>生日: </strong>{{ user.birthday }}</li>
+    <li><strong>城市: </strong>{{ user.city }}</li>
+    <li><strong>资金: </strong>{{ user.money }} $</li>
+</ul>
+
+<a href="/modify?id={{ user.id }}">修改用户信息</a>
+{% end %}

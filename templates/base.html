@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>信息管理</title>
+        <style>
+            body {
+                width: 900px;
+                margin: 0 auto;
+                padding: 0;
+            }
+            table,
+            th,
+            td {
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 5px 15px;
+            }
+            .navbar > a {
+                font-size: 1.2em;
+                padding: 10px 20px;
+            }
+            .navbar img {
+                width: 50px;
+                height: 50px;
+            }
+            .content {
+                float: left;
+                width: 700px;
+            }
+            .sidebar {
+                border-left: 1px solid black;
+                float: left;
+                padding: 10px 0 0 20px;
+                width: 170px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 导航区域 -->
+        <div class="navbar">
+            <a><img src="/static/img/logo.png"/></a>
+            <a href="/">首页</a>
+            <a href="/all">查看全部</a>
+        </div>
+
+        <hr />
+
+        <!-- 内容区域 -->
+        <div class="content">
+            {% block container %} 欢迎回来 {% end %}
+        </div>
+
+        <!-- 边栏区域 -->
+        <div class="sidebar">
+            快捷链接
+            <ul>
+                {% for u in users %}
+                <li>
+                    <a href="/info?id={{ u.id }}">{{ u.name }}</a>
+                </li>
+                {% end %}
+            </ul>
+        </div>
+    </body>
+</html>
